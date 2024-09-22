@@ -11,10 +11,21 @@ const { Sequelize } = require("sequelize");
 // });
 
 // Option 3: Passing parameters separately (other dialects)
-const sequelize = new Sequelize("bookingcare", "root", "hoang1505$", {
+const sequelize = new Sequelize("hoang", "root", "hoang1505", {
   host: "localhost",
+  port: "3307",
   dialect: "mysql",
   logging: false,
+  dialectOptions: {
+    charset: "utf8mb4",
+    connectTimeout: 60000, // Thời gian chờ kết nối (60 giây)
+  },
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000,
+  },
 });
 
 let connectDB = async () => {

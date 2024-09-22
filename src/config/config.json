@@ -1,10 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": "hoang1505$",
-    "database": "bookingcare",
-    "host": "127.0.0.1",
+    "password": "hoang1505",
+    "database": "hoang",
+    "host": "localhost",
+    "port": 3307,
     "dialect": "mysql",
+    "dialectOptions": {
+      "charset": "utf8mb4",
+      "connectTimeout": 60000
+    },
     "logging": false
   },
   "test": {
