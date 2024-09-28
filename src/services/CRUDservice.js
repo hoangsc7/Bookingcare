@@ -105,7 +105,18 @@ let deleteUserById = (userId) => {
         where: { id: userId },
       });
       if (user) {
-        await user.destroy();
+        await db.User.destroy({
+          where: { id: userId },
+        });
+        resolve({
+          errCode: 0,
+          message: "User deleted successfully",
+        });
+      } else {
+        resolve({
+          errCode: 2,
+          message: "User not found",
+        });
       }
       resolve();
     } catch (e) {
