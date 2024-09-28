@@ -3,10 +3,17 @@ import express from "express";
 import viewEngine from "./config/viewEngine";
 import initwebRouter from "./routes/web";
 import connectDB from "./config/connectDB";
+import cors from "cors";
 
 require("dotenv").config();
 
 let app = express();
+const corsOptions = {
+  origin: "http://localhost:3000", // Nguồn gốc cho phép
+  credentials: true, // Cho phép gửi cookie và thông tin đăng nhập
+};
+
+app.use(cors(corsOptions));
 
 //config app
 

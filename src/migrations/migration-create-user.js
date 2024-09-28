@@ -54,6 +54,7 @@ module.exports = {
         },
       },
       {
+        timestamps: true, // Tự động quản lý createdAt và updatedAt
         charset: "utf8mb4",
         collate: "utf8mb4_unicode_ci",
       }

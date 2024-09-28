@@ -10,7 +10,9 @@
       "charset": "utf8mb4",
       "connectTimeout": 60000
     },
-    "logging": false
+    "logging": false,
+    "query": { "raw": true },
+    "timezone": "+07:00"
   },
   "test": {
     "username": "root",
