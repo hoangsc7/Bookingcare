@@ -12,8 +12,8 @@ let createNewUser = async (data) => {
       await db.User.create({
         email: data.email,
         password: hashPasswordFromBcrypt,
-        firstName: data.fname,
-        lastName: data.lname,
+        firstName: data.firstName,
+        lastName: data.lastName,
         gender: data.gender == "1" ? true : false,
         address: data.address,
         phoneNumber: data.phoneNumber,
@@ -77,8 +77,8 @@ let updateUserData = (data) => {
       // Cập nhật dữ liệu user trực tiếp bằng model
       let [updated] = await db.User.update(
         {
-          firstName: data.fname,
-          lastName: data.lname,
+          firstName: data.firstName,
+          lastName: data.lastName,
           address: data.address,
           // Các trường khác cần cập nhật
         },
